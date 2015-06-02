@@ -1,0 +1,15 @@
+---
+# This playbook contains plays that will install the docker on ubuntu 14.04
+
+    - name: Add source repository into sources list for docker.
+      apt_repository: repo='deb https://get.docker.io/ubuntu docker main' state=present
+
+    # Add an apt key by id from a keyserver.
+    - apt_key: url=https://get.docker.io/gpg state=present
+
+    - name: apt-get update.
+      apt: update_cache=yes
+
+    - name: Install docker.
+      apt: name=lxc-docker state=present
+

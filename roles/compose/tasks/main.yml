@@ -1,0 +1,7 @@
+---
+# This playbook contains plays that will install the compose on ubuntu 14.04
+
+- name: Download compose.
+  shell: curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+- name: Set the permissions.
+  file: path=/usr/local/bin/docker-compose mode=0755
