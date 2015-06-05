@@ -1,0 +1,12 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+- name: Retrieve new lists of packages.
+  command: apt-get -yqq update
+
+- name: Remove automatically all unused packages.
+  command: apt-get -yqq autoremove
+
+- name: Erase old downloaded archive files.
+  command: apt-get -yqq autoclean
+

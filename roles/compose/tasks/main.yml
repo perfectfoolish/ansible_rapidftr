@@ -5,3 +5,7 @@
   shell: curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 - name: Set the permissions.
   file: path=/usr/local/bin/docker-compose mode=0755
+
+- name: Install Command Completion.
+  shell: curl -L https://raw.githubusercontent.com/docker/compose/1.2.0/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
+
